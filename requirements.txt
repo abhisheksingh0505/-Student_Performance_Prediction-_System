@@ -6,5 +6,10 @@ python-dotenv
 mysql-connector-python
 pymysql
 SQLAlchemy
+seaborn
+matplotlib
+catboost
+xgboost
+
 
 
