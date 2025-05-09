@@ -2,15 +2,21 @@ import sys
 from src.mlproject.logger import logging
 from src.mlproject.exception import CustomException
 from src.mlproject.components.data_ingestion import DataIngestion, DataIngestionConfig
+from src.mlproject.components.data_transformation import DataTransformation
 
 if __name__ == "__main__":
     logging.info("The execution has started")
 
     try:
-        config = DataIngestionConfig()  # Config object is now passed correctly
-        data_ingestion = DataIngestion(config)
-        data_ingestion.initiate_data_ingestion()
+        # Create config and ingestion
+        data_ingestion_config = DataIngestionConfig()
+        data_ingestion = DataIngestion(data_ingestion_config)
+        train_data_path, test_data_path = data_ingestion.initiate_data_ingestion()
+
+        # Perform transformation
+        data_transformation = DataTransformation()
+        data_transformation.initiate_data_transformation(train_data_path, test_data_path)
 
     except Exception as e:
-        logging.info("Exception occurred during ingestion")
+        logging.info("Exception occurred during ingestion or transformation")
         raise CustomException(e, sys)

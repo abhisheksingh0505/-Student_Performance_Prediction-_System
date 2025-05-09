@@ -23,7 +23,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         try:
             logging.info("Starting data ingestion from SQL database...")
-            df = read_sql_data()
+            df = pd.read_csv(os.path.join('C:/Users/Dell/Desktop/mlproject/notebook/data/raw.csv'))
             logging.info("Reading completed from MySQL database.")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
