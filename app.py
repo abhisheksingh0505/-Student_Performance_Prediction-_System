@@ -1,22 +1,33 @@
 import sys
+import os
+from pathlib import Path
+
+# Add project root to Python path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from src.mlproject.logger import logging
 from src.mlproject.exception import CustomException
-from src.mlproject.components.data_ingestion import DataIngestion, DataIngestionConfig
+from src.mlproject.components.data_ingestion import DataIngestion
 from src.mlproject.components.data_transformation import DataTransformation
+from src.mlproject.components.model_trainer import ModelTrainer
+from src.mlproject.config.configuration import ModelTrainerConfig
 
 if __name__ == "__main__":
-    logging.info("The execution has started")
-
+    logging.info("Execution started")
     try:
-        # Create config and ingestion
-        data_ingestion_config = DataIngestionConfig()
-        data_ingestion = DataIngestion(data_ingestion_config)
-        train_data_path, test_data_path = data_ingestion.initiate_data_ingestion()
+        # Data Ingestion
+        data_ingestion = DataIngestion()
+        train_path, test_path = data_ingestion.initiate_data_ingestion()
 
-        # Perform transformation
+        # Data Transformation
         data_transformation = DataTransformation()
-        data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+        train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_path, test_path)
+
+        # Model Training
+        model_trainer = ModelTrainer()
+        r2 = model_trainer.initiate_model_trainer(train_arr, test_arr)
+        print(f"R2 Score: {r2}")
 
     except Exception as e:
-        logging.info("Exception occurred during ingestion or transformation")
+        logging.error(f"Error: {str(e)}")
         raise CustomException(e, sys)
