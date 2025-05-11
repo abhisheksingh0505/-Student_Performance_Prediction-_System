@@ -2,18 +2,24 @@ import sys
 import os
 from pathlib import Path
 
-# Add project root to Python path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Fix 1: Add project root to Python path (critical)
+sys.path.append(str(Path(__file__).parent.parent))
 
-from src.mlproject.logger import logging
-from src.mlproject.exception import CustomException
-from src.mlproject.components.data_ingestion import DataIngestion
-from src.mlproject.components.data_transformation import DataTransformation
-from src.mlproject.components.model_trainer import ModelTrainer
-from src.mlproject.config.configuration import ModelTrainerConfig
+# Fix 2: Correct imports
+try:
+    from src.mlproject.config.configuration import DataIngestionConfig, ModelTrainerConfig
+    from src.mlproject.components.data_ingestion import DataIngestion
+    from src.mlproject.components.data_transformation import DataTransformation
+    from src.mlproject.components.model_trainer import ModelTrainer
+    from src.mlproject.exception import CustomException
+    from src.mlproject.logger import logging
+except ImportError as e:
+    print(f"Import error! Check paths. Current sys.path: {sys.path}")
+    raise
 
 if __name__ == "__main__":
     logging.info("Execution started")
+    
     try:
         # Data Ingestion
         data_ingestion = DataIngestion()
@@ -25,9 +31,8 @@ if __name__ == "__main__":
 
         # Model Training
         model_trainer = ModelTrainer()
-        r2 = model_trainer.initiate_model_trainer(train_arr, test_arr)
-        print(f"R2 Score: {r2}")
-
+        print(model_trainer.initiate_model_trainer(train_arr, test_arr))
+        
     except Exception as e:
         logging.error(f"Error: {str(e)}")
         raise CustomException(e, sys)
