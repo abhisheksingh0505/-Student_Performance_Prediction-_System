@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/af7f1dc063874867a4cdc28723197a89/artifacts
+end_time: 1747064792715
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: af7f1dc063874867a4cdc28723197a89
+run_name: amusing-lamb-344
+run_uuid: af7f1dc063874867a4cdc28723197a89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747064787278
+status: 3
+tags: []
+user_id: root

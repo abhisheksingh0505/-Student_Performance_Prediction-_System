@@ -1,49 +1,47 @@
 import os
 import sys
-import pandas as pd
-from dataclasses import dataclass
-from sklearn.model_selection import train_test_split
-
 from src.mlproject.exception import CustomException
 from src.mlproject.logger import logging
+import pandas as pd
 from src.mlproject.utils import read_sql_data
+
+from sklearn.model_selection import train_test_split
+
+from dataclasses import dataclass
+
 
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('artifacts', 'train.csv')
-    test_data_path: str = os.path.join('artifacts', 'test.csv')
-    raw_data_path: str = os.path.join('artifacts', 'raw.csv')
+    train_data_path:str=os.path.join('artifact','train.csv')
+    test_data_path:str=os.path.join('artifact','test.csv')
+    raw_data_path:str=os.path.join('artifact','raw.csv')
 
 class DataIngestion:
-    def __init__(self, ingestion_config: DataIngestionConfig = DataIngestionConfig()):
-        self.ingestion_config = ingestion_config
+    def __init__(self):
+        self.ingestion_config=DataIngestionConfig()
 
     def initiate_data_ingestion(self):
         try:
-            logging.info("Starting data ingestion from SQL database...")
-            df = pd.read_csv(os.path.join('C:/Users/Dell/Desktop/mlproject/notebook/data/raw.csv'))
-            logging.info("Reading completed from MySQL database.")
+            ##reading the data from mysql
+            df=pd.read_csv(os.path.join('notebook/data','raw.csv'))
+            logging.info("Reading completed mysql database")
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
-            # Save raw data
-            df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
-            logging.info(f"Raw data saved at {self.ingestion_config.raw_data_path}")
+            df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
+            train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
+            train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            # Train-test split
-            train_set, test_set = train_test_split(df, test_size=0.2, random_state=42)
+            logging.info("Data Ingestion is completed")
 
-            # Save train and test data
-            train_set.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
-            test_set.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
-
-            logging.info(f"Train data saved at {self.ingestion_config.train_data_path}")
-            logging.info(f"Test data saved at {self.ingestion_config.test_data_path}")
-            logging.info("Data ingestion completed successfully.")
-
-            return (
+            return(
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
+
+
             )
+
+
         except Exception as e:
-            raise CustomException(e, sys)
+            raise CustomException(e,sys)
