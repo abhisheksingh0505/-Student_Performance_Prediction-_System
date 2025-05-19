@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/5ab59b3d8dfa4fbcb0f9d8a88c9f7fc9/artifacts
+end_time: 1747074260708
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5ab59b3d8dfa4fbcb0f9d8a88c9f7fc9
+run_name: selective-perch-162
+run_uuid: 5ab59b3d8dfa4fbcb0f9d8a88c9f7fc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747074239333
+status: 3
+tags: []
+user_id: root

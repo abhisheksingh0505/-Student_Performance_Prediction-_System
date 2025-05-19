@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/cafe8b5d240146188582c4642e8f00d9/artifacts
+end_time: 1747164253552
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cafe8b5d240146188582c4642e8f00d9
+run_name: rebellious-chimp-850
+run_uuid: cafe8b5d240146188582c4642e8f00d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747164235139
+status: 3
+tags: []
+user_id: root

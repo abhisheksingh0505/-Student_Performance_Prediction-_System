@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/8efca3ae482e4107b5a6987c40266dca/artifacts
+end_time: 1747163792000
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8efca3ae482e4107b5a6987c40266dca
+run_name: secretive-sponge-803
+run_uuid: 8efca3ae482e4107b5a6987c40266dca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747163775049
+status: 3
+tags: []
+user_id: root

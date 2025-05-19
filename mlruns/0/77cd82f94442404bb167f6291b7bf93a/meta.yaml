@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/77cd82f94442404bb167f6291b7bf93a/artifacts
+end_time: 1747644069622
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 77cd82f94442404bb167f6291b7bf93a
+run_name: clean-cow-540
+run_uuid: 77cd82f94442404bb167f6291b7bf93a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747644057630
+status: 3
+tags: []
+user_id: root

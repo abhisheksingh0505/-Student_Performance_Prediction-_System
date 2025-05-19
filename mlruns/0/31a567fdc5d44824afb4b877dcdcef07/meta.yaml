@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/31a567fdc5d44824afb4b877dcdcef07/artifacts
+end_time: 1747643080762
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 31a567fdc5d44824afb4b877dcdcef07
+run_name: awesome-robin-817
+run_uuid: 31a567fdc5d44824afb4b877dcdcef07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747643069960
+status: 3
+tags: []
+user_id: root

@@ -1,4 +1,3 @@
-
 import os
 import sys
 from dataclasses import dataclass
@@ -22,6 +21,11 @@ from xgboost import XGBRegressor
 from src.mlproject.exception import CustomException
 from src.mlproject.logger import logging
 from src.mlproject.utils import save_object,evaluate_models
+import mlflow
+import mlflow.sklearn
+from mlflow.models.signature import infer_signature
+
+
 
 
 @dataclass
@@ -135,6 +139,9 @@ class ModelTrainer:
                 mlflow.log_metric("r2", r2)
                 mlflow.log_metric("mae", mae)
 
+                # Prepare input example and signature for model logging
+                input_example = X_train[:1]
+                signature = infer_signature(X_train, best_model.predict(X_train))
 
                 # Model registry does not work with file store
                 if tracking_url_type_store != "file":
@@ -143,9 +150,14 @@ class ModelTrainer:
                     # There are other ways to use the Model Registry, which depends on the use case,
                     # please refer to the doc for more information:
                     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-                    mlflow.sklearn.log_model(best_model, "model", registered_model_name=actual_model)
+                    mlflow.sklearn.log_model(best_model, "model", registered_model_name=actual_model, input_example=input_example, signature=signature)
                 else:
-                    mlflow.sklearn.log_model(best_model, "model")
+                    mlflow.sklearn.log_model(best_model, "model", input_example=input_example, signature=signature)
+
+
+
+
+
 
 
 
@@ -163,8 +175,9 @@ class ModelTrainer:
 
             r2_square = r2_score(y_test, predicted)
             return r2_square
+        
 
 
 
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e,sys) 

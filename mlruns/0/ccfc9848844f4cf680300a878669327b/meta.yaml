@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/ccfc9848844f4cf680300a878669327b/artifacts
+end_time: 1747164015102
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ccfc9848844f4cf680300a878669327b
+run_name: awesome-pug-598
+run_uuid: ccfc9848844f4cf680300a878669327b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747164000422
+status: 3
+tags: []
+user_id: root

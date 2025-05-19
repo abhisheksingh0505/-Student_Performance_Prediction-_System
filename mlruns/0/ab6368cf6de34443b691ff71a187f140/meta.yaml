@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/ab6368cf6de34443b691ff71a187f140/artifacts
+end_time: 1747642989479
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ab6368cf6de34443b691ff71a187f140
+run_name: receptive-cow-754
+run_uuid: ab6368cf6de34443b691ff71a187f140
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747642974898
+status: 3
+tags: []
+user_id: root
