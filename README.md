@@ -178,9 +178,9 @@ print(f"Predicted Score: {prediction[0]}")
 Model Name	                 R² Score
 Ridge                       	0.8806
 Linear Regression	            0.8804
-Random Forest Regressor	      0.8537
-AdaBoost Regressor	          0.8531
-CatBoost Regressor	          0.8516
+Random Forest Regressor	        0.8537
+AdaBoost Regressor	            0.8531
+CatBoost Regressor	            0.8516
 XGBRegressor	                0.8278
 Lasso	                        0.8253
 K-Neighbors Regressor       	0.7838
@@ -214,7 +214,7 @@ import mlflow.sklearn
 
 # Track experiments
 with mlflow.start_run():
-    mlflow.log_param("model_type", "XGBoost")
+    mlflow.log_param("model_type", "Linear Regression")
     mlflow.log_metric("rmse", rmse_score)
     mlflow.log_metric("r2_score", r2_score)
     mlflow.sklearn.log_model(model, "model")
@@ -316,7 +316,7 @@ We welcome contributions! Here's how you can help:
 
 ## 🏆 Achievements & Recognition
 
-- ⭐ **High Model Accuracy**: Achieved 88.04% R² score with XGBoost
+- ⭐ **High Model Accuracy**: Achieved 88.04% R² score with Linear Regression
 - 🔧 **Industry-Standard MLOps**: Professional-grade pipeline implementation  
 - 📊 **Comprehensive Analysis**: 7-model comparison with detailed metrics
 - 🚀 **Scalable Architecture**: Easily extensible and maintainable codebase
