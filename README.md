@@ -161,7 +161,7 @@ import pickle
 import numpy as np
 
 # Load the best model
-with open('artifacts/model.pkl', 'rb') as file:
+with open('artifact/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Make prediction
