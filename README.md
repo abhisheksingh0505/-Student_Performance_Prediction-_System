@@ -174,22 +174,25 @@ print(f"Predicted Score: {prediction[0]}")
 
 ### Model Comparison Results
 ```
-Model Performance (R² Score):
-├── XGBoost Regressor:      0.923
-├── CatBoost Regressor:     0.918
-├── Gradient Boosting:      0.912
-├── Random Forest:          0.898
-├── AdaBoost Regressor:     0.885
-├── Decision Tree:          0.842
-└── Linear Regression:      0.823
-```
+📊 Model Comparison Table
+Model Name	                 R² Score
+Ridge                       	0.8806
+Linear Regression	            0.8804
+Random Forest Regressor	      0.8537
+AdaBoost Regressor	          0.8531
+CatBoost Regressor	          0.8516
+XGBRegressor	                0.8278
+Lasso	                        0.8253
+K-Neighbors Regressor       	0.7838
+Decision Tree	                0.7382
 
-### Key Performance Indicators
-- **Best Model**: XGBoost Regressor
-- **R² Score**: 0.923 (92.3% variance explained)
-- **RMSE**: 5.2 points
-- **MAE**: 3.8 points
-- **Training Time**: < 30 seconds
+
+## Best Model: Linear Regression
+
+-- R² Score: 0.8804 (88.04% variance explained)
+-- Root Mean Squared Error (RMSE): 5.2 points
+-- Mean Absolute Error (MAE): 3.8 points
+-- Training Time: < 30 seconds
 
 ## 🔍 Data Features
 
@@ -313,7 +316,7 @@ We welcome contributions! Here's how you can help:
 
 ## 🏆 Achievements & Recognition
 
-- ⭐ **High Model Accuracy**: Achieved 92.3% R² score with XGBoost
+- ⭐ **High Model Accuracy**: Achieved 88.04% R² score with XGBoost
 - 🔧 **Industry-Standard MLOps**: Professional-grade pipeline implementation  
 - 📊 **Comprehensive Analysis**: 7-model comparison with detailed metrics
 - 🚀 **Scalable Architecture**: Easily extensible and maintainable codebase
@@ -322,8 +325,8 @@ We welcome contributions! Here's how you can help:
 
 ### 👨‍💻 Developer
 **Abhishek Singh**
-- 📧 Email: [your-email@domain.com]
-- 💼 LinkedIn: [Your LinkedIn Profile]
+- 📧 Email: [singh050530@gmail.com]
+- 💼 LinkedIn: [https://www.linkedin.com/in/abhishek-singh-139181279 ]
 - 🐙 GitHub: [@abhisheksingh0505](https://github.com/abhisheksingh0505)
 
 ### 🆘 Getting Help

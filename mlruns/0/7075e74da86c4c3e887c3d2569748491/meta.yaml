@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/Desktop/mlproject/mlruns/0/7075e74da86c4c3e887c3d2569748491/artifacts
+end_time: 1748167782174
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7075e74da86c4c3e887c3d2569748491
+run_name: popular-eel-379
+run_uuid: 7075e74da86c4c3e887c3d2569748491
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748167761214
+status: 3
+tags: []
+user_id: root
